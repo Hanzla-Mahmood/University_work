@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contactform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            
+   margin-top: 80px ;
+         margin-left: 480px;
+           
+
+        }
+
+        form {
+			
+            max-width: 400px;
+            width: 100%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-links p{
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+        }
+      
+        .social-links img {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .video-container {
+            width: 30%;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .video-container:hover {
+            transform: scale(1.1);
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+        }
+       
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+       
+    </style>
+</head>
+<body>
+    <audio controls autoplay loop hidden src="contac.mp3" ></audio>
+    <video class="background-video" autoplay loop muted>
+        <source src="contact.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Write your name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id=" email" name="email" placeholder="Write your email" required>
+
+        <label for="message">Message:</label>
+        <input id="message" name="message" rows="5" placeholder="Write your message here!" required> 
+        <button type="submit" onclick="nav1('index')">Submit</button>
+        <button type="submit" onclick="nav2('login')">Back</button>
+     </br>
+    <div class="social-links">
+       <p font-weight="bold">For Further queries: </p> 
+       <a href="https://instagram.com/hanzla16?igshid=OGQ5ZDc2ODk2ZA==">
+            <img src="./logo-1.png" alt="Instagram">
+        </a>
+    <a href="https://www.linkedin.com/in/muhammad-hanzla-21a370285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+        <img src="./linkedin.png">
+    </a>
+    </div>
+    <div class="formatted-text" style="font-style: italic;">
+        <pre style="color: red; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" >hanzlaf865@gmail.com</pre>
+    </div>
+    </form>
+    <script>
+        function nav1() {
+          window.
+          location.href= ('login.jsp');
+         }
+         function nav2() {
+          window.
+          location.href= ('index.html');
+         }
+    </script>
+</body>
+</html>

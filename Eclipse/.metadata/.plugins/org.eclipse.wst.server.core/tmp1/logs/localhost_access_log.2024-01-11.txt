@@ -1,0 +1,11 @@
+127.0.0.1 - - [11/Jan/2024:09:21:37 -0800] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [11/Jan/2024:09:21:56 -0800] "GET /statemanagement/ HTTP/1.1" 404 772
+0:0:0:0:0:0:0:1 - - [11/Jan/2024:09:22:09 -0800] "GET /statemanagement/servlet1 HTTP/1.1" 404 780
+0:0:0:0:0:0:0:1 - - [11/Jan/2024:09:22:26 -0800] "GET /statemanagement/index.html HTTP/1.1" 404 782
+0:0:0:0:0:0:0:1 - - [11/Jan/2024:09:23:17 -0800] "GET /statemanagement/index.html HTTP/1.1" 404 782
+0:0:0:0:0:0:0:1 - - [11/Jan/2024:09:29:27 -0800] "GET /statemanagement/index.html HTTP/1.1" 404 782
+0:0:0:0:0:0:0:1 - - [11/Jan/2024:09:33:57 -0800] "GET /finalpaper/index.html HTTP/1.1" 404 777
+0:0:0:0:0:0:0:1 - - [11/Jan/2024:09:34:44 -0800] "GET /finalpaper/index.html HTTP/1.1" 404 777
+0:0:0:0:0:0:0:1 - - [11/Jan/2024:09:34:50 -0800] "GET /finalpaper/ HTTP/1.1" 404 767
+0:0:0:0:0:0:0:1 - - [11/Jan/2024:09:34:57 -0800] "GET /finalpaper/servlet1 HTTP/1.1" 404 775
+0:0:0:0:0:0:0:1 - - [11/Jan/2024:09:35:22 -0800] "GET /req.getParameter/index.html HTTP/1.1" 304 -

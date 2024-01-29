@@ -1,0 +1,6 @@
+127.0.0.1 - - [01/Dec/2023:05:27:04 -0800] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [01/Dec/2023:05:27:23 -0800] "GET /ServletFirstDemo/WEB-INF/web.xml HTTP/1.1" 404 683
+0:0:0:0:0:0:0:1 - - [01/Dec/2023:05:28:53 -0800] "GET /ServletFirstDemo/WEB-INF/web.xml/hanzla HTTP/1.1" 404 683
+0:0:0:0:0:0:0:1 - - [01/Dec/2023:05:29:04 -0800] "GET /ServletFirstDemo/hanzla HTTP/1.1" 404 779
+0:0:0:0:0:0:0:1 - - [01/Dec/2023:05:29:22 -0800] "GET /ServletFirstDemo/WEB-INF/web.xml HTTP/1.1" 404 683
+0:0:0:0:0:0:0:1 - - [01/Dec/2023:05:30:37 -0800] "GET /ServletFirstDemo/WEB-INF/web.xml HTTP/1.1" 404 683

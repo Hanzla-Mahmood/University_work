@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            margin: 0;
+        }
+        *{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body{
+  font-family: montserrat;
+}
+nav{
+  background: black;
+  height: 58px;
+  width: 100%;
+ 
+}
+label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 65px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+.logo:hover{
+font-style: italic;
+  transition: .5s;
+  
+  color:green;
+}
+nav ul{
+  float: right;
+
+  margin-right: 20px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 60px;
+  margin: 0 5px;
+ 
+}
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+a.active,a:hover{
+ background: orangered;
+  transition: .5s;
+}
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+@media (max-width: 952px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: orange;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
+       
+
+        .start-quiz-btn {
+            display: block;
+            margin: 50px auto;
+            padding: 15px 30px;
+            background-color: #4caf50;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .start-quiz-btn:hover {
+            background-color: #45a049; /* Hover effect color for the "Start the Quiz" button */
+            color: #fff;
+        }
+     
+
+        section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: black;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .team-member:hover {
+    background-color: black;
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+        h1, h2 {
+            color: white;
+        }
+
+        p {
+            line-height: 1.6;
+            color: seagreen;
+            font-style: oblique;
+          font-size:large;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .team-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .team-member {
+            text-align: center;
+            flex: 0 0 30%;
+            padding: 10px;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.7);
+         
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s; /* Add a smooth color transition effect */
+        }
+
+        footer p:hover {
+            color: #ffd700; /* Hover effect color for AOOp~project and copyright */
+        }
+
+        footer span {
+            font-size: 12px;
+            color: #ddd;
+        }
+        .video-container {
+            width: 30%;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .video-container:hover {
+            transform: scale(1.1);
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+        }
+       
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+  
+  <audio controls autoplay loop hidden src="about.mp3" ></audio>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">QuizX</label>
+        <ul>
+          <li><a href="#" onclick="navigate('home')">Home</a></li>
+          <li><a class="active"  href="#"onclick="navigate('about')">About</a></li>
+          <li><a href="#" onclick="navigate('contact')">Contact</a></li>
+          <li><a href="#"onclick="startQuiz()">Start the Quiz</a></li>
+        </ul>
+      </nav>
+      
+    <section>
+        <h2>Hello, myself <span style="color: tan;">HANZLA</span></h2>
+        <p>Welcome to <span style="color: white;">QuizX</span>, your ultimate destination for interactive quizzes designed to enhance your general knowledge! Dive into a world of learning with our engaging and diverse quiz categories. Whether you're a trivia enthusiast or a knowledge seeker, QuizX is here to make your learning experience fun and rewarding. Challenge yourself, track your progress, and expand your horizons with our thoughtfully curated quizzes. Join us on a journey of discovery and elevate your general knowledge with QuizX!</p>
+
+        <div class="team-section">
+            <div class="team-member">
+                <img src="hanzla.jpg" alt="Team Member 1">
+                <h3>HANZLA </h3>
+                <p>Role:Web Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="haris.jpg" alt="Team Member 2">
+                <h3>Haris</h3>
+                <p>Role: Designer</p>
+            </div>
+            <div class="team-member">
+                <img src="talha1.jpg" alt="Team Member 3">
+                <h3>Talha</h3>
+                <p>Role: Marketing</p>
+            </div>
+        </div>
+        <video class="background-video" autoplay loop muted>
+          <source src="waves_-_22183 (Original).mp4" type="video/mp4">
+    </section>
+    <script>
+      function startQuiz() {
+          window.location.href = 'StarttheQuiz.html'; // Replace with the actual quiz page URL
+      }
+
+      function navigate(pageName) {
+          let pageUrl;
+
+          switch (pageName) {
+              case 'home':
+                  pageUrl = 'index.html';
+                  break;
+              case 'about':
+                  pageUrl = 'about.html';
+                  break;
+              case 'contact':
+                  pageUrl = 'contact.html';
+                  break;
+              default:
+                  pageUrl = 'index.html'; // Default to home page
+                  break;
+          }
+
+          window.location.href = pageUrl;
+      }
+  </script>
+
+    <footer class="footer">
+        <p>&copy; 2023 QuizX ~ All rights reserved</p>
+    </footer>
+
+</body>
+</html>

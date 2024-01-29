@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz Platform</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        iframe:hover{
+            background-color: red;
+        }
+        body {
+            text-align: center;
+            color: #0C6887;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+            
+        header {
+            background-color: #001A35;
+            color: #fff;
+            padding: 20px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* p {
+            font-size: 18px;
+            color: white;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        } */
+
+        .start-button {
+            background-color: black;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+       
+        *{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body{
+  font-family: montserrat;
+}
+
+
+nav{
+  background: black;
+  height: 58px;
+  width: 100%;
+}
+label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 65px;
+  padding: 0 100px;
+  font-weight: bold;
+  
+}
+.logo:hover{
+font-style: italic;
+  transition: .5s;
+  cursor:pointer;
+  color:green;
+}
+nav ul{
+  float: right;
+  margin-right: 20px;
+        list-style-type: square;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 60px;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+a.active,a:hover{
+   
+ background: orangered;
+  transition: .5s;
+}
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+@media (max-width: 952px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: orange;
+    
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
+
+
+.start-quiz-btn {
+            display: block;
+            margin: 50px auto;
+            padding: 15px 30px;
+            background-color: #4caf50;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .start-quiz-btn:hover {
+            background-color: #45a049; 
+            color: #fff;
+        }
+        main {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .video-container {
+            width: 30%;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .video-container:hover {
+            transform: scale(1.1);
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+        }
+       
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        aside {
+            height: 450px;
+            width: 30%;
+            background-color: #ecf0f1;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        aside:hover {
+            transform: scale(1.1);
+        }
+        h3{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: black;
+        }
+    #Gmail{
+        color: red;
+    }
+    footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s; /* Add a smooth color transition effect */
+        }
+
+        footer p:hover {
+            color: #ffd700; /* Hover effect color for AOOp~project and copyright */
+        }
+
+        footer span {
+            font-size: 12px;
+            color: #ddd;
+        }
+
+       </style>
+        </head>
+        <body>
+            <audio controls autoplay loop hidden src="index.mp3" ></audio>
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                  <i class="fas fa-bars"></i>
+                </label>
+                <label class="logo">QuizX</label>
+                <ul>
+                  <li><a class="active" href="#" onclick="navigate('home')">Home</a></li>
+                  <li><a href="#"onclick="navigate('about')">About</a></li>
+                  <li><a href="#" onclick="navigate('contact')">Contact</a></li>
+                  <li><a href="#"onclick="startQuiz()">Start the Quiz</a></li>
+                </ul>
+              </nav>
+          
+   <!-- Replace 'your_video_url_here' with the actual URL of your video -->
+   <video class="background-video" autoplay loop muted>
+    <source src="main.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+              
+    <main>
+        <section>
+<!--            
+            <iframe width="380px" width="420px"height="250px" src="https://www.youtube.com/embed/mJVWX0vud-g?si=-Xupjq1Gwdwar65i"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
+            <iframe width="380px" width="400px"height="250px" src="https://www.youtube.com/embed/OXeNtmJ4BXE?si=_cZ4PivMc8hiSer0"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+           -->
+        </section>
+         
+        <aside>
+            <h2>Test your knowledge</h2>
+            <p>Challenge yourself with our diverse range of quizzes. Learning has never been this fun!</p>
+            <br><br><br><br> <iframe  height="190px"  src="https://www.youtube.com/embed/OXeNtmJ4BXE?si=_cZ4PivMc8hiSer0"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></iframe><br><br><br><br><br><h3>Our Gmail:<span id="Gmail">hanzlaf865@gmail.com</span></h3>
+        </aside>
+    </main>
+    <main>
+        
+    </main>
+
+    <script>
+        function startQuiz() {
+            window.location.href = 'login.jsp'; // Replace with the actual quiz page URL
+        }
+
+        function navigate(pageName) {
+            let pageUrl;
+
+            switch (pageName) {
+                case 'home':
+                    pageUrl = 'index.html';
+                    break;
+                case 'about':
+                    pageUrl = 'about.html';
+                    break;
+                case 'contact':
+                    pageUrl = 'contact.html';
+                    break;
+                default:
+                    pageUrl = 'index.html'; // Default to home page
+                    break;
+            }
+
+            window.location.href = pageUrl;
+        }
+    </script>
+
+    <footer>
+        <p class="aoop-project">AOOp~project <span>&copy; 2023</span></p>
+    </footer>
+        </body>
+</html>
