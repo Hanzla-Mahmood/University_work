@@ -1,0 +1,196 @@
+<circuit>
+<CurrentPage>0</CurrentPage>
+<page 0>
+<PageViewport>0,0,122.4,-60.5</PageViewport>
+<gate>
+<ID>1</ID>
+<type>AA_TOGGLE</type>
+<position>9.5,-20.5</position>
+<output>
+<ID>OUT_0</ID>3 </output>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 1</lparam></gate>
+<gate>
+<ID>2</ID>
+<type>AA_TOGGLE</type>
+<position>17,-25.5</position>
+<output>
+<ID>OUT_0</ID>4 </output>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>3</ID>
+<type>GA_LED</type>
+<position>41.5,-22.5</position>
+<input>
+<ID>N_in0</ID>1 </input>
+<gparam>LED_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>4</ID>
+<type>GA_LED</type>
+<position>41,-30</position>
+<input>
+<ID>N_in0</ID>2 </input>
+<gparam>LED_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>5</ID>
+<type>AA_LABEL</type>
+<position>22.5,-9</position>
+<gparam>LABEL_TEXT T FLIP FLOP</gparam>
+<gparam>TEXT_HEIGHT 3</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>6</ID>
+<type>BE_JKFF_LOW</type>
+<position>29.5,-24.5</position>
+<input>
+<ID>J</ID>3 </input>
+<input>
+<ID>K</ID>3 </input>
+<output>
+<ID>Q</ID>1 </output>
+<input>
+<ID>clock</ID>4 </input>
+<output>
+<ID>nQ</ID>2 </output>
+<gparam>angle 0.0</gparam>
+<lparam>SYNC_CLEAR false</lparam>
+<lparam>SYNC_SET false</lparam></gate>
+<gate>
+<ID>7</ID>
+<type>AA_LABEL</type>
+<position>9,-17</position>
+<gparam>LABEL_TEXT T</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>8</ID>
+<type>AA_LABEL</type>
+<position>39.5,-19</position>
+<gparam>LABEL_TEXT Q</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>9</ID>
+<type>AA_LABEL</type>
+<position>17.5,-22.5</position>
+<gparam>LABEL_TEXT Clk</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>10</ID>
+<type>AA_LABEL</type>
+<position>40,-26.5</position>
+<gparam>LABEL_TEXT Q'</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<wire>
+<ID>1</ID>
+<shape>
+<hsegment>
+<ID>1</ID>
+<points>32.5,-22.5,40.5,-22.5</points>
+<connection>
+<GID>6</GID>
+<name>Q</name></connection>
+<connection>
+<GID>3</GID>
+<name>N_in0</name></connection></hsegment></shape></wire>
+<wire>
+<ID>2</ID>
+<shape>
+<vsegment>
+<ID>0</ID>
+<points>36,-30,36,-26.5</points>
+<intersection>-30 2</intersection>
+<intersection>-26.5 1</intersection></vsegment>
+<hsegment>
+<ID>1</ID>
+<points>32.5,-26.5,36,-26.5</points>
+<connection>
+<GID>6</GID>
+<name>nQ</name></connection>
+<intersection>36 0</intersection></hsegment>
+<hsegment>
+<ID>2</ID>
+<points>36,-30,40,-30</points>
+<connection>
+<GID>4</GID>
+<name>N_in0</name></connection>
+<intersection>36 0</intersection></hsegment></shape></wire>
+<wire>
+<ID>3</ID>
+<shape>
+<vsegment>
+<ID>0</ID>
+<points>14,-29,14,-20.5</points>
+<intersection>-29 4</intersection>
+<intersection>-20.5 1</intersection></vsegment>
+<hsegment>
+<ID>1</ID>
+<points>11.5,-20.5,26.5,-20.5</points>
+<connection>
+<GID>1</GID>
+<name>OUT_0</name></connection>
+<intersection>14 0</intersection>
+<intersection>26.5 6</intersection></hsegment>
+<hsegment>
+<ID>4</ID>
+<points>14,-29,26.5,-29</points>
+<intersection>14 0</intersection>
+<intersection>26.5 5</intersection></hsegment>
+<vsegment>
+<ID>5</ID>
+<points>26.5,-29,26.5,-26.5</points>
+<connection>
+<GID>6</GID>
+<name>K</name></connection>
+<intersection>-29 4</intersection></vsegment>
+<vsegment>
+<ID>6</ID>
+<points>26.5,-22.5,26.5,-20.5</points>
+<connection>
+<GID>6</GID>
+<name>J</name></connection>
+<intersection>-20.5 1</intersection></vsegment></shape></wire>
+<wire>
+<ID>4</ID>
+<shape>
+<hsegment>
+<ID>1</ID>
+<points>19,-25.5,26.5,-25.5</points>
+<connection>
+<GID>2</GID>
+<name>OUT_0</name></connection>
+<intersection>26.5 4</intersection></hsegment>
+<vsegment>
+<ID>4</ID>
+<points>26.5,-25.5,26.5,-24.5</points>
+<connection>
+<GID>6</GID>
+<name>clock</name></connection>
+<intersection>-25.5 1</intersection></vsegment></shape></wire></page 0>
+<page 1>
+<PageViewport>0,0,122.4,-60.5</PageViewport></page 1>
+<page 2>
+<PageViewport>0,0,122.4,-60.5</PageViewport></page 2>
+<page 3>
+<PageViewport>0,0,122.4,-60.5</PageViewport></page 3>
+<page 4>
+<PageViewport>0,0,122.4,-60.5</PageViewport></page 4>
+<page 5>
+<PageViewport>0,0,122.4,-60.5</PageViewport></page 5>
+<page 6>
+<PageViewport>0,0,122.4,-60.5</PageViewport></page 6>
+<page 7>
+<PageViewport>0,0,122.4,-60.5</PageViewport></page 7>
+<page 8>
+<PageViewport>0,0,122.4,-60.5</PageViewport></page 8>
+<page 9>
+<PageViewport>0,0,122.4,-60.5</PageViewport></page 9></circuit>

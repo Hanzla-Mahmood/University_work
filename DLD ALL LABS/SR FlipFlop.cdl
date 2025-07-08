@@ -1,0 +1,356 @@
+<circuit>
+<CurrentPage>0</CurrentPage>
+<page 0>
+<PageViewport>-6,0,116.4,-64.5</PageViewport>
+<gate>
+<ID>2</ID>
+<type>BA_NAND2</type>
+<position>31.5,-18</position>
+<input>
+<ID>IN_0</ID>7 </input>
+<input>
+<ID>IN_1</ID>5 </input>
+<output>
+<ID>OUT</ID>4 </output>
+<gparam>angle 0.0</gparam>
+<lparam>INPUT_BITS 2</lparam></gate>
+<gate>
+<ID>4</ID>
+<type>BA_NAND2</type>
+<position>30,-34</position>
+<input>
+<ID>IN_0</ID>5 </input>
+<input>
+<ID>IN_1</ID>6 </input>
+<output>
+<ID>OUT</ID>3 </output>
+<gparam>angle 0.0</gparam>
+<lparam>INPUT_BITS 2</lparam></gate>
+<gate>
+<ID>5</ID>
+<type>BA_NAND2</type>
+<position>47.5,-19</position>
+<input>
+<ID>IN_0</ID>4 </input>
+<input>
+<ID>IN_1</ID>9 </input>
+<output>
+<ID>OUT</ID>10 </output>
+<gparam>angle 0.0</gparam>
+<lparam>INPUT_BITS 2</lparam></gate>
+<gate>
+<ID>6</ID>
+<type>BA_NAND2</type>
+<position>47,-33</position>
+<input>
+<ID>IN_0</ID>10 </input>
+<input>
+<ID>IN_1</ID>3 </input>
+<output>
+<ID>OUT</ID>9 </output>
+<gparam>angle 0.0</gparam>
+<lparam>INPUT_BITS 2</lparam></gate>
+<gate>
+<ID>8</ID>
+<type>AA_LABEL</type>
+<position>21,-16</position>
+<gparam>LABEL_TEXT S</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>10</ID>
+<type>AA_LABEL</type>
+<position>20.5,-36.5</position>
+<gparam>LABEL_TEXT R</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>12</ID>
+<type>AA_LABEL</type>
+<position>9.5,-22.5</position>
+<gparam>LABEL_TEXT Clk</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>14</ID>
+<type>AA_TOGGLE</type>
+<position>10.5,-26</position>
+<output>
+<ID>OUT_0</ID>5 </output>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 1</lparam></gate>
+<gate>
+<ID>16</ID>
+<type>AA_TOGGLE</type>
+<position>21,-34.5</position>
+<output>
+<ID>OUT_0</ID>6 </output>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>18</ID>
+<type>AA_TOGGLE</type>
+<position>24.5,-17</position>
+<output>
+<ID>OUT_0</ID>7 </output>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 1</lparam></gate>
+<gate>
+<ID>20</ID>
+<type>GA_LED</type>
+<position>66.5,-19</position>
+<input>
+<ID>N_in0</ID>10 </input>
+<gparam>LED_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>22</ID>
+<type>GA_LED</type>
+<position>66.5,-33</position>
+<input>
+<ID>N_in0</ID>9 </input>
+<gparam>LED_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>24</ID>
+<type>AA_LABEL</type>
+<position>67,-15.5</position>
+<gparam>LABEL_TEXT Q</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>26</ID>
+<type>AA_LABEL</type>
+<position>67.5,-29</position>
+<gparam>LABEL_TEXT Q`</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>28</ID>
+<type>AA_LABEL</type>
+<position>35,-6</position>
+<gparam>LABEL_TEXT SR Flipflop</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<wire>
+<ID>3</ID>
+<shape>
+<hsegment>
+<ID>1</ID>
+<points>33,-34,44,-34</points>
+<connection>
+<GID>4</GID>
+<name>OUT</name></connection>
+<intersection>44 4</intersection></hsegment>
+<vsegment>
+<ID>4</ID>
+<points>44,-34,44,-34</points>
+<intersection>-34 1</intersection>
+<intersection>-34 5</intersection></vsegment>
+<hsegment>
+<ID>5</ID>
+<points>44,-34,44,-34</points>
+<connection>
+<GID>6</GID>
+<name>IN_1</name></connection>
+<intersection>44 4</intersection></hsegment></shape></wire>
+<wire>
+<ID>4</ID>
+<shape>
+<hsegment>
+<ID>1</ID>
+<points>34.5,-18,44.5,-18</points>
+<connection>
+<GID>5</GID>
+<name>IN_0</name></connection>
+<intersection>34.5 4</intersection></hsegment>
+<vsegment>
+<ID>4</ID>
+<points>34.5,-18,34.5,-18</points>
+<intersection>-18 1</intersection>
+<intersection>-18 5</intersection></vsegment>
+<hsegment>
+<ID>5</ID>
+<points>34.5,-18,34.5,-18</points>
+<connection>
+<GID>2</GID>
+<name>OUT</name></connection>
+<intersection>34.5 4</intersection></hsegment></shape></wire>
+<wire>
+<ID>5</ID>
+<shape>
+<vsegment>
+<ID>0</ID>
+<points>27,-33,27,-19</points>
+<intersection>-33 3</intersection>
+<intersection>-26 2</intersection>
+<intersection>-19 1</intersection></vsegment>
+<hsegment>
+<ID>1</ID>
+<points>27,-19,28.5,-19</points>
+<connection>
+<GID>2</GID>
+<name>IN_1</name></connection>
+<intersection>27 0</intersection></hsegment>
+<hsegment>
+<ID>2</ID>
+<points>12.5,-26,27,-26</points>
+<connection>
+<GID>14</GID>
+<name>OUT_0</name></connection>
+<intersection>27 0</intersection></hsegment>
+<hsegment>
+<ID>3</ID>
+<points>27,-33,27,-33</points>
+<connection>
+<GID>4</GID>
+<name>IN_0</name></connection>
+<intersection>27 0</intersection></hsegment></shape></wire>
+<wire>
+<ID>6</ID>
+<shape>
+<vsegment>
+<ID>0</ID>
+<points>25,-35,25,-34.5</points>
+<intersection>-35 1</intersection>
+<intersection>-34.5 2</intersection></vsegment>
+<hsegment>
+<ID>1</ID>
+<points>25,-35,27,-35</points>
+<connection>
+<GID>4</GID>
+<name>IN_1</name></connection>
+<intersection>25 0</intersection></hsegment>
+<hsegment>
+<ID>2</ID>
+<points>23,-34.5,25,-34.5</points>
+<connection>
+<GID>16</GID>
+<name>OUT_0</name></connection>
+<intersection>25 0</intersection></hsegment></shape></wire>
+<wire>
+<ID>7</ID>
+<shape>
+<hsegment>
+<ID>1</ID>
+<points>26.5,-17,28.5,-17</points>
+<connection>
+<GID>18</GID>
+<name>OUT_0</name></connection>
+<intersection>28.5 3</intersection></hsegment>
+<vsegment>
+<ID>3</ID>
+<points>28.5,-17,28.5,-17</points>
+<intersection>-17 1</intersection>
+<intersection>-17 4</intersection></vsegment>
+<hsegment>
+<ID>4</ID>
+<points>28.5,-17,28.5,-17</points>
+<connection>
+<GID>2</GID>
+<name>IN_0</name></connection>
+<intersection>28.5 3</intersection></hsegment></shape></wire>
+<wire>
+<ID>9</ID>
+<shape>
+<hsegment>
+<ID>1</ID>
+<points>43.5,-32.5,65.5,-32.5</points>
+<intersection>43.5 6</intersection>
+<intersection>50 8</intersection>
+<intersection>65.5 9</intersection></hsegment>
+<vsegment>
+<ID>6</ID>
+<points>43.5,-32.5,43.5,-20</points>
+<intersection>-32.5 1</intersection>
+<intersection>-20 7</intersection></vsegment>
+<hsegment>
+<ID>7</ID>
+<points>43.5,-20,44.5,-20</points>
+<connection>
+<GID>5</GID>
+<name>IN_1</name></connection>
+<intersection>43.5 6</intersection></hsegment>
+<vsegment>
+<ID>8</ID>
+<points>50,-33,50,-32.5</points>
+<intersection>-33 10</intersection>
+<intersection>-32.5 1</intersection></vsegment>
+<vsegment>
+<ID>9</ID>
+<points>65.5,-33,65.5,-32.5</points>
+<intersection>-33 11</intersection>
+<intersection>-32.5 1</intersection></vsegment>
+<hsegment>
+<ID>10</ID>
+<points>50,-33,50,-33</points>
+<connection>
+<GID>6</GID>
+<name>OUT</name></connection>
+<intersection>50 8</intersection></hsegment>
+<hsegment>
+<ID>11</ID>
+<points>65.5,-33,65.5,-33</points>
+<connection>
+<GID>22</GID>
+<name>N_in0</name></connection>
+<intersection>65.5 9</intersection></hsegment></shape></wire>
+<wire>
+<ID>10</ID>
+<shape>
+<hsegment>
+<ID>1</ID>
+<points>44,-19,65.5,-19</points>
+<connection>
+<GID>5</GID>
+<name>OUT</name></connection>
+<intersection>44 3</intersection>
+<intersection>65.5 4</intersection></hsegment>
+<vsegment>
+<ID>3</ID>
+<points>44,-32,44,-19</points>
+<intersection>-32 5</intersection>
+<intersection>-19 1</intersection></vsegment>
+<vsegment>
+<ID>4</ID>
+<points>65.5,-19,65.5,-19</points>
+<intersection>-19 1</intersection>
+<intersection>-19 6</intersection></vsegment>
+<hsegment>
+<ID>5</ID>
+<points>44,-32,44,-32</points>
+<connection>
+<GID>6</GID>
+<name>IN_0</name></connection>
+<intersection>44 3</intersection></hsegment>
+<hsegment>
+<ID>6</ID>
+<points>65.5,-19,65.5,-19</points>
+<connection>
+<GID>20</GID>
+<name>N_in0</name></connection>
+<intersection>65.5 4</intersection></hsegment></shape></wire></page 0>
+<page 1>
+<PageViewport>0,0,122.4,-64.5</PageViewport></page 1>
+<page 2>
+<PageViewport>0,0,122.4,-64.5</PageViewport></page 2>
+<page 3>
+<PageViewport>0,0,122.4,-64.5</PageViewport></page 3>
+<page 4>
+<PageViewport>0,0,122.4,-64.5</PageViewport></page 4>
+<page 5>
+<PageViewport>0,0,122.4,-64.5</PageViewport></page 5>
+<page 6>
+<PageViewport>0,0,122.4,-64.5</PageViewport></page 6>
+<page 7>
+<PageViewport>0,0,122.4,-64.5</PageViewport></page 7>
+<page 8>
+<PageViewport>0,0,122.4,-64.5</PageViewport></page 8>
+<page 9>
+<PageViewport>0,0,122.4,-64.5</PageViewport></page 9></circuit>
