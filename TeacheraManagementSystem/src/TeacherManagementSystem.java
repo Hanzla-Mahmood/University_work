@@ -1,0 +1,140 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.sql.*;
+import javax.swing.*;
+
+public class TeacherManagementSystem extends JFrame implements ActionListener {
+    JLabel nameLabel;
+    JTextField nameField;
+    JLabel subjectLabel;
+    JTextField subjectField;
+    JLabel phoneLabel;
+    JTextField phoneField;
+    JLabel idLabel;
+    JTextField idField;
+    JButton submitButton;
+    JButton deleteButton;
+    JButton searchButton;
+    JButton clrbtn;
+
+
+    public TeacherManagementSystem() {
+        setLayout(new GridLayout(6, 2));
+
+        nameLabel = new JLabel("Name: ");
+        nameField = new JTextField(20);
+        subjectLabel = new JLabel("Subject: ");
+        subjectField = new JTextField();
+        phoneLabel = new JLabel("Phone: ");
+        phoneField = new JTextField();
+        idLabel = new JLabel("ID: ");
+        idField = new JTextField();
+        submitButton = new JButton("Submit");
+        deleteButton = new JButton("Delete");
+        searchButton = new JButton("Search");
+        clrbtn = new JButton("Clear");
+
+        add(nameLabel);
+        add(nameField);
+        add(subjectLabel);
+        add(subjectField);
+        add(phoneLabel);
+        add(phoneField);
+        add(idLabel);
+        add(idField);
+        add(submitButton);
+        add(deleteButton);
+        add(searchButton);
+        add(clrbtn);
+
+        submitButton.addActionListener(this);
+        deleteButton.addActionListener(this);
+        searchButton.addActionListener(this);
+        clrbtn.addActionListener(this);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        String URL = "jdbc:ucanaccess://C://Game~Changer//The End//ALLAH KA SHUKAR//TeacheraManagementSystem//src//TeacherManagement.accdb";
+
+        if (e.getSource() == submitButton) {
+            String name = nameField.getText();
+            String subject = subjectField.getText();
+            String phone = phoneField.getText();
+            String id = idField.getText();
+            JOptionPane.showMessageDialog(null, "Data Submitted:\nName: " + name + "\nSubject: " + subject + "\nPhone: " + phone + "\nID: " + id, "Data Submitted", JOptionPane.INFORMATION_MESSAGE);
+            Connection con = null;
+            try {
+                con = DriverManager.getConnection(URL);
+            } catch (SQLException ex) {
+                System.out.println("Connection Not formed");
+            }
+
+            String sql = "INSERT INTO Teacher (Name,Subject,PhoneNo,ID) VALUES (?,?,?,?)";
+            // 2- Create a statement object
+
+
+            try {
+                PreparedStatement ps = con.prepareStatement(sql);
+                ps.setString(1, nameField.getText());
+                ps.setString(2, subjectField.getText());
+                ps.setString(3, phoneField.getText());
+                ps.setString(4, idField.getText());
+                // 3- Executing query
+                ps.executeUpdate();
+                System.out.println("Done");
+                con.close();//4close connection
+
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+        if (e.getSource() == deleteButton) {
+            String sql = "DELETE FROM Teacher WHERE ID = ?";
+            // 2- Create a statement object
+
+            try {
+                Connection con = DriverManager.getConnection(URL);
+                PreparedStatement ps = con.prepareStatement(sql);
+                ps.setString(1, idField.getText());
+                JOptionPane.showConfirmDialog(this, "Data Deleted:\nID: "  , "Data Deleted", JOptionPane.INFORMATION_MESSAGE);
+                System.out.println("Done");
+                con.close();
+            } catch (SQLException sq) {
+               System.out.println(sq);
+            }
+        }
+        if (e.getSource() == searchButton) {
+
+            try {
+                Connection con = DriverManager.getConnection(URL);
+                Statement st = con.createStatement();
+                ResultSet rs = st.executeQuery("SELECT * FROM Teacher");
+                while(rs.next()){
+                    if(idField.getText().equals(rs.getString("ID"))){
+                        nameField.setText(rs.getString("Name"));
+                        subjectField.setText(rs.getString("Subject"));
+                        phoneField.setText(rs.getString("PhoneNo"));
+                        idField.setText(rs.getString("ID"));
+
+                    }
+                }
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+        if(e.getSource() == clrbtn){
+            nameField.setText("");
+            subjectField.setText("");
+            phoneField.setText("");
+            idField.setText("");
+        }
+    }
+    public static void main(String[] args) {
+       TeacherManagementSystem frame = new TeacherManagementSystem();
+        frame.setTitle("Teacher Management System");
+        frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
+}
