@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDENT MANAGEMENT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        form input[type="email"],
+        form input[type="name"],
+        form input[type="number"],
+        form input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        form input[type="submit"],
+        form input[type="button"] {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-top: 10px;
+            margin-right: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        form input[type="submit"]:hover,
+        form input[type="button"]:hover {
+            background: #0056b3;
+        }
+    </style>
+    <script>
+        function clearForm() {
+            document.getElementById("userForm").reset();
+        }
+    </script>
+</head>
+<body>
+    <form id="userForm" action="index.php" method="post">
+        <label>Email</label>
+        <input type="email" name="email"/>
+
+        <label>Name</label>
+        <input type="name" name="name"/>
+
+        <label>Roll No</label>
+        <input type="number" name="rollno"/>
+
+        <label>Father Name</label>
+        <input type="text" name="father_name"/>
+
+        <label>Department</label>
+        <input type="text" name="department"/>
+
+        <label>GPA</label>
+        <input type="number" name="gpa"/>
+
+        <input type="submit" name="action" value="CreateDB"/>
+        <input type="submit" name="action" value="CreateTable"/>
+        <input type="submit" name="action" value="Insert"/>
+        <input type="submit" name="action" value="Update"/>
+        <input type="submit" name="action" value="Delete"/>
+        <input type="submit" name="action" value="View"/>
+        <input type="button" value="Clear" onclick="clearForm()"/>
+    </form>
+</body>
+</html>
