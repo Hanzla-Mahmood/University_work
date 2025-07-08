@@ -1,0 +1,28 @@
+.data  
+msg1: .asciiz "The numbers are equal \n "
+msg2: .asciiz "The numbers are not equal"
+
+.text
+li $t0,10
+li $t1,10
+
+beq $t0,$t1,if
+
+bne $t0,$t1 else
+
+
+if: #if ki body
+li $v0,4
+la $a0,msg1
+syscall 
+
+li $v0,10
+syscall 
+
+else:
+li $v0,4
+la $a0,msg2
+syscall 
+
+li $v0,10
+syscall 

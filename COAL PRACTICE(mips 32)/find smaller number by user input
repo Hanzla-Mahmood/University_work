@@ -1,0 +1,76 @@
+.data 
+num1: .asciiz "Enter first number \n"
+num2: .asciiz "Enter second number \n"
+num3: .asciiz "Enter third number \n"
+min: .asciiz "Smaller number is \n"
+.text
+
+li $v0,4
+la $a0,num1
+syscall 
+
+li $v0,5
+syscall 
+
+move $t0,$v0
+
+li $v0,4
+la $a0,num2
+syscall 
+
+li $v0,5
+syscall 
+
+move $t1,$v0
+
+li $v0,4
+la $a0,num3
+syscall 
+
+li $v0,5
+syscall 
+
+move $t2,$v0
+
+ble $t0,$t1,if
+ble $t1,$t2,elseif
+b else
+
+if:
+
+li $v0,4
+la $a0,min
+syscall 
+
+li $v0,1
+move $a0,$t0
+syscall 
+
+li $v0,10
+syscall 
+
+elseif:
+
+li $v0,4
+la $a0,min
+syscall 
+
+li $v0,1
+move $a0,$t1
+syscall 
+
+li $v0,10
+syscall 
+
+else:
+li $v0,4
+move $a0,$t2
+syscall 
+
+li $v0,1
+move $a0,$t2
+syscall 
+
+li $v0,10
+syscall 
+

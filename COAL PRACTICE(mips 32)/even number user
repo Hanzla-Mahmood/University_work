@@ -1,0 +1,44 @@
+.data 
+msg: .asciiz "Enter a  number"
+space: .asciiz "\n"
+msg11: .asciiz " is even number"
+msg2: .asciiz " is not even number"
+.text
+
+li $v0,4
+la $a0,msg
+syscall 
+
+li $v0,4
+la $a0,space
+syscall 
+
+li $v0,5
+syscall 
+
+move $t0,$v0
+li $s0,2
+
+div $t0,$s0
+
+mfhi $t1
+
+beq $t1,$zero,even
+b else
+even:
+
+li $v0,4
+la $a0,msg11
+syscall 
+
+ li $v0,10
+syscall
+
+else:
+
+li $v0,4
+la $a0,msg2
+syscall 
+
+li $v0,10
+syscall

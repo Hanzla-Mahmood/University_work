@@ -1,0 +1,61 @@
+.data 
+arr: .space 20
+space: .asciiz "\n"
+.text 
+
+li $s0,1
+li $s1,2
+li $s2,3
+
+li $s4,5
+
+li $t0,0 # array starting index 0
+
+sw $s0,arr($t0)
+addi $t1,$t0,4
+sw $s1,arr($t1)
+addi $t2,$t1,4
+sw $s2,arr($t2)
+addi $t3,$t2,4
+sw $s3,arr($t3)
+
+
+
+lw $t7,arr($t0)
+li $v0,1
+move $a0,$t7
+syscall 
+
+li $v0,4
+la $a0,space
+syscall 
+
+lw $t7,arr($t1)
+li $v0,1
+move $a0,$t7
+syscall 
+
+li $v0,4
+la $a0,space
+syscall 
+
+lw $t7,arr($t2)
+li $v0,1
+move $a0,$t7
+syscall 
+
+li $v0,4
+la $a0,space
+syscall 
+
+lw $t7,arr($t3)
+li $v0,1
+move $a0,$t7
+syscall 
+
+li $v0,4
+la $a0,space
+syscall 
+
+li $v0,10
+syscall  

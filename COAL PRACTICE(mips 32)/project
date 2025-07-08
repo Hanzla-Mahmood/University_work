@@ -1,0 +1,89 @@
+.data
+mess: .asciiz "Enter temperature scale 1 for Fahrenheit, 2 for Celsius and 3 for default = "
+mess1: .asciiz "Enter temperature value = "
+mess2: .asciiz "Default"
+res:  .asciiz "Converted temperature = "
+
+.text
+main:
+# Display prompt for temperature scale
+li $v0,4
+la $a0,mess
+syscall
+
+# Read temperature scale input
+li $v0,5
+syscall
+move $t0,$v0   # Store temperature scale choice
+
+# Convert temperature based on user input
+beq $t0,1,to_celsius    # If Fahrenheit, convert to Celsius
+beq $t0,2,to_fahrenheit # If Celsius, convert to Fahrenheit
+beq $t0,3,Default
+
+# If input is neither 1 nor 2, exit program
+j exit
+
+to_celsius:
+# Display prompt for temperature value
+li $v0,4
+la $a0,mess1
+syscall
+
+# Read temperature value input
+li $v0,5
+syscall
+move $t1, $v0   # Store temperature value
+
+# Convert Fahrenheit to Celsius: (F - 32) * 5/9
+li $t2,32
+sub $t1,$t1,$t2   # Subtract 32 from Fahrenheit temperature
+li $t2,5
+mul $t4,$t1,$t2   # Multiply by 5
+li $t3,9
+div $t4,$t3        # Divide by 9
+mflo $t1            # Store result in $t1
+j display_result
+
+to_fahrenheit:
+# Display prompt for temperature value
+li $v0,4
+la $a0,mess1
+syscall
+
+# Read temperature value input
+li $v0,5
+syscall
+move $t1, $v0   # Store temperature value
+
+# Convert Celsius to Fahrenheit: (C * 9/5) + 32
+li $t2,9
+mul $t4,$t1,$t2   # Multiply by 9
+li $t3,5
+div $t4,$t3        # Divide by 5
+mflo $t1            # Store result in $t1
+li $t2,32
+add $t1,$t1,$t2   # Add 32 to Celsius temperature
+j display_result
+
+display_result:
+# Display converted temperature
+li $v0,4
+la $a0,res
+syscall
+
+li $v0,1
+move $a0,$t1
+syscall
+
+# Exit program
+j exit
+
+Default:
+li $v0,4
+la $a0,mess2
+syscall
+
+exit:
+li $v0,10
+syscall

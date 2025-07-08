@@ -1,0 +1,17 @@
+.data  
+msg1: .asciiz "The numbers are equal "
+
+.text
+
+li $t0,10
+
+li $t1,8
+
+beq $t0,$t1,if
+
+
+if: #if ki body
+li $v0,4
+la $a0,msg1
+syscall 
+

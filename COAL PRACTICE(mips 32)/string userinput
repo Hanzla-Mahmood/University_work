@@ -1,0 +1,14 @@
+.data
+N: .asciiz "Enter your Name \n"
+name: .space 10
+.text
+
+li $v0,4
+la $a0,N
+syscall 
+
+ # Read the user's input
+    li $v0, 8                # Load syscall code for read string (8)
+    la $a0, name             # Load the address where the name will be stored
+    li $a1, 10              # Set the maximum number of bytes to read (including null terminator)
+    syscall                  # Make the syscall

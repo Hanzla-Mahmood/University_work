@@ -1,0 +1,23 @@
+.data 
+.text 
+li $t0, 300
+
+li $t1,200
+
+# value assign karnay bad batana kis type ki value 
+
+
+li $v0,1  # $v0 may 1 a gaya jo batai ga kis type ki value hai 
+
+#1st
+
+add $t2,$t0,$t1
+move $a0,$t2
+syscall 
+
+
+#2nd 
+
+sub $t2,$t0,$t1
+move $a0,$t2
+syscall 

@@ -1,0 +1,25 @@
+.data 
+
+.text
+
+li $t0, 2
+li $t1,3
+li $t2,1
+li $t3,3 # dividing by 3 which is total 
+add $s0,$t0,$t1
+
+move $t4,$s0
+# final add result is in $s1
+add $s1,$t2,$t4
+
+ div $t7,$s1,$t3
+ 
+# final average result is in $t7
+ li $v0,1
+ move $a0,$t7
+ syscall 
+
+
+
+
+

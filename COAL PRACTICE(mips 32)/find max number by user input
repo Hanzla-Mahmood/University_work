@@ -1,0 +1,82 @@
+.data 
+msg1: .asciiz "Enter first number  \n"
+msg2: .asciiz "Enter second number \n"
+msg3: .asciiz "Enter third number \n"
+max: .asciiz "Max number is "
+.text
+main:
+#enter first number prompt
+li $v0,4
+la $a0,msg1
+syscall 
+# user will write that number
+li $v0,5
+syscall 
+# move thtat number to some registers 
+move $t0,$v0
+
+#enter second number prompt
+li $v0,4
+la $a0,msg2
+syscall 
+# user will write that number
+li $v0,5
+syscall 
+# move thtat number to some registers 
+move $t1,$v0
+
+#enter third number prompt
+li $v0,4
+la $a0,msg3
+syscall 
+# user will write that number
+li $v0,5
+syscall 
+# move thtat number to some registers 
+move $t2,$v0
+
+bge $t0,$t1,if   # if ( first>= second number)
+
+bge $t1,$t2,elseif # elseif ( seccond >= third number)
+
+b else # third number is greater
+
+if:
+li $v0,4
+la $a0,max
+syscall 
+
+li $v0,1
+move $a0,$t0
+syscall 
+
+li $v0,10
+syscall 
+
+elseif:
+
+li $v0,4
+la $a0,max
+syscall 
+
+li $v0,1
+
+move $a0,$t1
+syscall 
+
+li $v0,10
+syscall 
+
+else:
+
+li $v0,4
+la $a0,max
+syscall 
+
+li $v0,1
+
+move $a0,$t2
+syscall 
+
+li $v0,10
+syscall 

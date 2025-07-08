@@ -1,0 +1,44 @@
+.data
+myarray: .space 12
+.text
+
+li $s0,5
+
+li $s1,10
+
+li $s2,15
+
+# index =$t0 of array
+# 0 index
+li $t0,0  # starting from 0 index 
+
+sw $s0,myarray($t0) # storing 5  at 0 index          $t0 is index  and $s0 is used for storing values in array 
+
+# 1 index  which is at 4 
+
+addi $t0,$t0,4 # we are now at 4th means 1st index 
+
+sw $s0,myarray($t0)
+
+#2 index 
+
+addi $t2,$t0,4
+
+sw $s0,myarray($t0)
+
+
+
+# lw used to put values in some other  registers to print
+
+lw $s5,myarray($zero)  # 0 index stored vaue is now in $s5 which is the value to be displayed
+
+
+li $v0,1
+move $a0,$s5
+syscall 
+
+
+
+
+
+

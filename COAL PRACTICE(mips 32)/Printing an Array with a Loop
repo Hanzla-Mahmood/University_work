@@ -1,0 +1,38 @@
+.data
+arr: .space 12
+
+space: .asciiz "\n"
+.text
+
+li $s0,10
+li $s1,20
+li $s2,30
+
+addi $t0,$zero,0  # index starts from 0
+
+sw $s0,arr($t0)
+addi $t0,$t0,4
+sw $s1,arr($t0)
+addi $t0,$t0,4
+sw $s2,arr($t0)
+
+
+addi $t0,$zero,0  # clearing t0 0 bcz dubara wgile loop may index k liyah use kiyah 
+while:
+beq $t0,12,exit
+
+lw $t5,arr($t0) 
+addi $t0,$t0,4
+
+li $v0,1
+move $a0,$t5
+syscall 
+
+li $v0,4
+la $a0,space
+syscall 
+
+j while
+exit:
+li $v0,10
+syscall 

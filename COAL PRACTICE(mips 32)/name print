@@ -1,0 +1,17 @@
+.data 
+name: .asciiz "HANZLA"
+space: .asciiz "\n"
+lastname: .asciiz "Mahmood"
+.text 
+
+li $v0,4
+la $a0,name
+syscall 
+
+li $v0,4
+la $a0,space
+syscall
+
+li $v0,4
+la $a0,lastname
+syscall

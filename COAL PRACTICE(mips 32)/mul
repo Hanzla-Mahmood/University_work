@@ -1,0 +1,14 @@
+.data 
+
+.text 
+
+li $t0,4
+li $t1,5
+
+mul $t2,$t0,$t1
+
+li $v0,1
+add $a0,$zero,$t2
+
+# or i can do move $a0,$t2
+syscall 

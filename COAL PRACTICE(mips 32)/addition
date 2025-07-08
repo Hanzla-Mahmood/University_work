@@ -1,0 +1,18 @@
+.data 
+
+num1: .word 10
+num2: .word 20
+
+.text
+
+lw $t0,num1 # num1 variable may jo 10 value wo hum lw(load word) say register $t0 may load(store) karwa rahayy
+
+lw $t1,num2  # num2 variable may jo 20 value wo hum lw say register $t1 may load(store) karwa rahayy
+
+add $t2,$t1,$t0 # sum =a+b
+
+li $v0,1   #  inter value ko read k liyah 1 and $v0 may wo value ajai gi 
+# $v0 gun hai and 1 bullet type hai
+
+move $a0,$t2 # ab bullet load ho gai to $a0 trigger gun ka jo us k pass chali gay takay print ho jai 
+syscall # YEH GOLI FIRE KAR DEY GA PRINT HO GAY

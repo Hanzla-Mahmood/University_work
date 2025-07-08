@@ -1,0 +1,27 @@
+.data 
+myarray: .space 12
+.text
+
+li $s0,5
+
+li $s1,10
+
+li $s2,15
+
+li $t0,0  # index =$t0 
+
+sw $s0,myarray($t0) # $t0= 0 index in real its in 4
+
+addi $t3,$t0,4 
+
+sw $s1,myarray($t3)# 2nd index number =$t3
+
+addi $t4,$t3,4
+
+sw $s2,myarray($t4)
+
+lw $t7,myarray($t3) # we are finding $t3 index value here 
+
+li $v0,1
+move $a0,$t7
+syscall 

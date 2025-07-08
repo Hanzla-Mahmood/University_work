@@ -1,0 +1,22 @@
+.data
+.text
+
+li $t0,0 #i=0
+
+while:
+
+bge   $t0,50,exit  # if ($t1>50) loop say bahir ajana
+
+addi $t0,$t0,1
+
+li $v0,1
+
+move $a0,$t0
+syscall 
+
+j while 
+exit:
+li $v0,10
+syscall 
+
+

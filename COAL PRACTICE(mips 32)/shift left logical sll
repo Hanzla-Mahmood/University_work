@@ -1,0 +1,14 @@
+.data 
+
+.text
+
+li $t0,4
+
+sll $t1,$t0,2  # its working like 2^n so 2 power 2 =4 and 4*4=16
+
+li $v0,1
+
+move $a0,$t1
+
+# or we can use add  $a0,$zer0,$t1
+syscall 

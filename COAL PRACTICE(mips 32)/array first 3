@@ -1,0 +1,58 @@
+.data 
+array:  .space 12
+
+space: .asciiz "\n"
+.text
+
+li $s0,100 #1
+li $s1,200 #2
+li $s2,300 #3
+
+li $t0,0       # now defining index of array index =$t0
+#1
+sw $s0,array($t0)
+
+addi $t3,$t0,4
+
+sw $s1,array($t3)
+
+addi $t4,$t3,4
+
+sw $s2,array($t4)
+
+
+lw $t7,array($t0)  # for 0index =100
+
+
+li $v0,1
+move $a0,$t7
+syscall 
+
+
+li $v0,4
+la $a0,space
+syscall 
+
+#2
+lw $t7,array($t3)
+
+li $v0,1
+move $a0,$t7
+syscall 
+
+
+li $v0,4
+la $a0,space
+syscall 
+
+#3
+
+lw $t7,array($t4)
+li $v0,1
+move $a0,$t7
+syscall 
+
+
+li $v0,10
+syscall 
+

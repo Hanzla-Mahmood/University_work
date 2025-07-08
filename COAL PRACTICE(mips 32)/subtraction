@@ -1,0 +1,18 @@
+.data 
+num1: .word 50
+
+num2: .word 30
+
+.text
+
+lw $t0,num1 # bullets load ho rahi yani num1 ki value (50) register $t0 may a gai
+
+lw $t1,num2  # bullets load ho rahi yani num1 ki value (30) register $t1 may a gai
+
+li $v0,1 # $V0 gun hai and 1 show kar raha us may integer type ki bulletes load honayk liyah ai 
+
+sub $t2,$t0,$t1  # t2 =50 -30 # bullets load ho kar finally total result $t2 k pass a gaya jo $a0 ko signal dey gi gu read to shoot 
+
+move $a0,$t2 # ab bullet load ho gai to $a0 trigger hai gun ka $t2 jo $a0 ko signal dey ga you can now shoot 
+ 
+syscall  #shoot ho chuki $a0 say 

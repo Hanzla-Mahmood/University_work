@@ -1,0 +1,11 @@
+.data 
+  
+.text 
+
+li $t0,10
+
+  li $v0,1
+  move $a0,$t0  # move karwatay $a0 ma print karwana k liyah
+  syscall 
+ 
+

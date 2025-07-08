@@ -1,0 +1,63 @@
+.data 
+evenarray: .space 40 # Two arrays to store data 
+oddarray: .space 40
+a: .asciiz "Enter Number: "
+aa: .asciiz "one value from odd array:  "
+as: .asciiz "\none value from even array:  "
+.text 
+li $t1,1	#two register for loop
+li $t0,11    # loop run form 1 to 10 (10 times).
+
+li $t4,0 # for even array index
+li $t5,0 # for odd array index
+
+li $t3,2 #load 2 for div to check even or a odd
+
+loop:
+slt $t2,$t1,$t0
+beq $t2,$zero,end
+
+
+li $v0,4           # print message on screen 
+la $a0,a
+syscall
+li $v0,5           # get integer/read user value
+syscall
+move $t7,$v0 
+div $t7,$t3 #divide by 2 to find remder
+ mfhi $s1 #to store remder
+beq $s1,$zero,even # if remder(mfhi $s1) is equal 0 then even
+# if remder is not zero them odd
+sw $t7,oddarray($t5)
+addi $t5,$t5,4
+
+addi $t1,$t1,1 #add in t1 to run loop
+j loop
+
+even:
+sw $t7,evenarray($t4)
+addi $t4,$t4,4
+addi $t1,$t1,1 #add in t1 to run loop
+j loop
+
+end:
+#to print one value form odd array
+li $v0,4           # print message on screen 
+la $a0,aa
+syscall
+li $s3,4 # 4 mean 2nd index wali value
+lw $s5,oddarray($s3)
+li $v0,1
+move $a0,$s5
+syscall 
+#to print one value from even array
+li $v0,4           # print message on screen 
+la $a0,as
+syscall
+li $s2,8 # 8 mean 3rd index wali value
+lw $t8,evenarray($s2)
+li $v0,1
+move $a0,$t8
+syscall 
+li $v0,10
+syscall
