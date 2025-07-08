@@ -1,0 +1,17 @@
+D:\Lab visual programing\Lab (Hanzla Cs-120)\Crud_Linq_To_Sql\Crud_Linq_To_Sql\bin\Debug\Crud_Linq_To_Sql.exe.config
+D:\Lab visual programing\Lab (Hanzla Cs-120)\Crud_Linq_To_Sql\Crud_Linq_To_Sql\bin\Debug\Crud_Linq_To_Sql.exe
+D:\Lab visual programing\Lab (Hanzla Cs-120)\Crud_Linq_To_Sql\Crud_Linq_To_Sql\bin\Debug\Crud_Linq_To_Sql.pdb
+D:\Lab visual programing\Lab (Hanzla Cs-120)\Crud_Linq_To_Sql\Crud_Linq_To_Sql\obj\Debug\Crud_Linq_To_Sql.csproj.AssemblyReference.cache
+D:\Lab visual programing\Lab (Hanzla Cs-120)\Crud_Linq_To_Sql\Crud_Linq_To_Sql\obj\Debug\Crud_Linq_To_Sql.Form1.resources
+D:\Lab visual programing\Lab (Hanzla Cs-120)\Crud_Linq_To_Sql\Crud_Linq_To_Sql\obj\Debug\Crud_Linq_To_Sql.Properties.Resources.resources
+D:\Lab visual programing\Lab (Hanzla Cs-120)\Crud_Linq_To_Sql\Crud_Linq_To_Sql\obj\Debug\Crud_Linq_To_Sql.csproj.GenerateResource.cache
+D:\Lab visual programing\Lab (Hanzla Cs-120)\Crud_Linq_To_Sql\Crud_Linq_To_Sql\obj\Debug\Crud_Linq_To_Sql.csproj.CoreCompileInputs.cache
+D:\Lab visual programing\Lab (Hanzla Cs-120)\Crud_Linq_To_Sql\Crud_Linq_To_Sql\obj\Debug\Crud_Linq_To_Sql.exe
+D:\Lab visual programing\Lab (Hanzla Cs-120)\Crud_Linq_To_Sql\Crud_Linq_To_Sql\obj\Debug\Crud_Linq_To_Sql.pdb
+D:\Lab visual programing\Crud_Linq_To_Sql\Crud_Linq_To_Sql\obj\Debug\Crud_Linq_To_Sql.csproj.AssemblyReference.cache
+D:\Lab visual programing\Crud_Linq_To_Sql\Crud_Linq_To_Sql\obj\Debug\Crud_Linq_To_Sql.Form1.resources
+D:\Lab visual programing\Crud_Linq_To_Sql\Crud_Linq_To_Sql\obj\Debug\Crud_Linq_To_Sql.Properties.Resources.resources
+D:\Lab visual programing\Crud_Linq_To_Sql\Crud_Linq_To_Sql\obj\Debug\Crud_Linq_To_Sql.csproj.GenerateResource.cache
+D:\Lab visual programing\Crud_Linq_To_Sql\Crud_Linq_To_Sql\obj\Debug\Crud_Linq_To_Sql.csproj.CoreCompileInputs.cache
+D:\Lab visual programing\Crud_Linq_To_Sql\Crud_Linq_To_Sql\obj\Debug\Crud_Linq_To_Sql.exe
+D:\Lab visual programing\Crud_Linq_To_Sql\Crud_Linq_To_Sql\obj\Debug\Crud_Linq_To_Sql.pdb
